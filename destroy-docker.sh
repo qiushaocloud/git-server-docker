@@ -1,0 +1,1 @@
+docker rm -f qiushaocloud-git-server || true

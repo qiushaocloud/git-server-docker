@@ -1,0 +1,11 @@
+version: '3'
+services:
+  qiushaocloud-git-server:
+    image: qiushaocloud/git-server-docker
+    restart: always
+    container_name: qiushaocloud-git-server
+    ports:
+      - "2222:22"
+    volumes:
+    - ./keys:/git-server/keys
+    - ./repos:/git-server/repos
