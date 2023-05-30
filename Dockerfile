@@ -9,9 +9,6 @@ RUN ssh-keygen -A
 
 WORKDIR /git-server/
 
-RUN addgroup -S git && \
-    adduser -S -G git git
-
 RUN mkdir /git-server/keys \
   && mkdir /git-server/repos \
   && adduser -D -s /usr/bin/git-shell git \
