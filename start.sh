@@ -18,5 +18,11 @@ if [ "$(ls -A /git-server/repos/)" ]; then
   find . -type d -exec chmod g+s '{}' +
 fi
 
+# Check if /git-server/repos/init-repo.sh exists
+if [ ! -f /git-server/repos/init-repo.sh ]; then
+  cp /git-server/init-repo.sh /git-server/repos/init-repo.sh
+    chmod +x /git-server/repos/init-repo.sh
+fi
+
 # Start the restricted SSH server
 /usr/sbin/sshd -D -e
