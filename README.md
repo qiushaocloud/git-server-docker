@@ -9,7 +9,7 @@
 2.  运行 ./run-docker.sh 【注：docker-compose 低版本识别不了 .env，需要进行升级，作者用的版本是: 1.29.2】
 3.  查看日志: docker logs qiushaocloud-git-server
 4. 当前目录 repos 映射进容器里
-5. 当前目录 keys 映射进容器里, 里面存放拉取代码的公钥
+5. 当前目录 keys 映射进容器里, 里面存放拉取代码的公钥，每次更新需要重启下 docker
 
 #### 参与贡献
 
