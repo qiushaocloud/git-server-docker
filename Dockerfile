@@ -5,10 +5,15 @@ RUN apk update && \
     git \
     openssh
 
+
+WORKDIR /git-server/
+
 RUN addgroup -S git && \
     adduser -S -G git git
 
-RUN mkdir /git-server
+RUN mkdir /git-server/keys \
+  && mkdir /git-server/repos \
+  && mkdir /home/git/.ssh
 
 COPY start.sh /git-server/start.sh
 COPY init-repo.sh /git-server/init-repo.sh
