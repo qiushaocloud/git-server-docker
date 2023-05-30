@@ -10,6 +10,8 @@
 3.  查看日志: docker logs qiushaocloud-git-server
 4. 当前目录 repos 映射进容器里
 5. 当前目录 keys 映射进容器里, 里面存放拉取代码的公钥，每次更新需要重启下 docker
+6. 创建repo: 进入容器里面，到 /git-server/repos 执行`sh init-repo.sh myrepo.git`
+7. 克隆代码：`git clone ssh://git@<ip-docker-server>:2222/git-server/repos/myrepo.git`
 
 #### 参与贡献
 
