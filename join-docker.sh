@@ -1,1 +1,1 @@
-docker exec -it qiushaocloud-git-server bash
+docker exec -it qiushaocloud-git-server sh

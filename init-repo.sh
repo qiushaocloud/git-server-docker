@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 REPO_NAME=$1
 
