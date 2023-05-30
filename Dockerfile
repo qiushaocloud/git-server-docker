@@ -5,6 +5,7 @@ RUN apk update && \
     git \
     openssh
 
+RUN ssh-keygen -A
 
 WORKDIR /git-server/
 
@@ -13,6 +14,8 @@ RUN addgroup -S git && \
 
 RUN mkdir /git-server/keys \
   && mkdir /git-server/repos \
+  && adduser -D -s /usr/bin/git-shell git \
+  && echo git:gitpassword123 | chpasswd \
   && mkdir /home/git/.ssh
 
 COPY start.sh /git-server/start.sh
@@ -23,4 +26,4 @@ RUN chmod +x /git-server/*.sh
 
 EXPOSE 22
 
-CMD ["/git-server/start.sh"]
+CMD ["sh", "start.sh"]

@@ -1,8 +1,5 @@
 #!/bin/sh
 
-# Generate a restricted shell for the git user
-echo "git:x:$(id -u):$(id -g):git user:/home/git:/usr/bin/git-shell" >> /etc/passwd
-
 if [ "$(ls -A /git-server/keys/)" ]; then
   cd /home/git
   cat /git-server/keys/*.pub > .ssh/authorized_keys
@@ -25,4 +22,4 @@ if [ ! -f /git-server/repos/init-repo.sh ]; then
 fi
 
 # Start the restricted SSH server
-/usr/sbin/sshd -D -e
+/usr/sbin/sshd -D
